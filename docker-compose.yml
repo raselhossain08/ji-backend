@@ -9,8 +9,9 @@ services:
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
-      - /root/jifu-backend/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./certs:/etc/nginx/certs:ro
+      
     networks:
       - nginx-rtmp-net
 
