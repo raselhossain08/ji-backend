@@ -15,6 +15,3 @@ services:
   auth:
     build: ./auth
     container_name: auth_server
-networks:
-  nginx-rtmp-net:
-    driver: bridge
