@@ -5,15 +5,10 @@ services:
     ports:
       - "1935:1935"
       - "8080:8080"
-      - "8443:443"  # Map port 443 to enable SSL
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
-      - /etc/nginx/ssl:/etc/nginx/ssl  # Mount SSL certificates into the container
-    environment:
-      - RTMP_SSL=true  # Enable SSL in your RTMP configuration
-    depends_on:
-      - auth
+
   auth:
     build: ./auth
     container_name: auth_server
