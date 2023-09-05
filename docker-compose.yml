@@ -9,7 +9,7 @@ services:
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
-      - /path/to/ssl:/etc/nginx/ssl  # Mount SSL certificates into the container
+      - /etc/nginx/ssl:/etc/nginx/ssl  # Mount SSL certificates into the container
     environment:
       - RTMP_SSL=true  # Enable SSL in your RTMP configuration
     depends_on:
