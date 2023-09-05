@@ -9,9 +9,7 @@ services:
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./certs:/etc/nginx/certs:ro
-      
+
     networks:
       - nginx-rtmp-net
 
