@@ -4,25 +4,11 @@ services:
     build: ./rtmp
     ports:
       - "1935:1935"
+      - "80:8080"
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
-    depends_on:
-      - auth
 
   auth:
     build: ./auth
     container_name: auth_server
-
-  nginx:
-    image: nginx:latest
-    container_name: nginx_server
-    ports:
-      - "80:80"
-      - "8443:443"
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/certs:/etc/nginx/certs
-    depends_on:
-      - rtmp
-      - auth
