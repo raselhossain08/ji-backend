@@ -5,8 +5,8 @@ COPY index.html /www/
 FROM nginx:latest
 
 # Copy your SSL certificate and key to the container
-COPY yourdomain.crt /etc/nginx/ssl/
-COPY yourdomain.key /etc/nginx/ssl/
+COPY jifutvserver.com.crt /etc/nginx/ssl/
+COPY jifutvserver.com.key /etc/nginx/ssl/
 
 # Copy your NGINX RTMP configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
