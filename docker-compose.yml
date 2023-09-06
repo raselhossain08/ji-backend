@@ -9,9 +9,8 @@ services:
     volumes:
       - ./data:/tmp/hls
       - /etc/letsencrypt/live/jifutvserver.com:/etc/letsencrypt/live/jifutvserver.com
- # Mount Let's Encrypt SSL certificates
     depends_on:
-      - auth # Ensure auth service is started before rtmp service
+      - auth
 
   auth:
     build: ./auth
