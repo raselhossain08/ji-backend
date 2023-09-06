@@ -8,6 +8,7 @@ services:
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
+      - /etc/nginx/ssl:/etc/nginx/ssl
 
   auth:
     build: ./auth
