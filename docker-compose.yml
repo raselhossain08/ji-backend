@@ -8,6 +8,9 @@ services:
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
+      - /etc/letsencrypt:/etc/letsencrypt # Mount Let's Encrypt SSL certificates
+    depends_on:
+      - auth # Ensure auth service is started before rtmp service
 
   auth:
     build: ./auth
